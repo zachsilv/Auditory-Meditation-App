@@ -1,0 +1,22 @@
+API:
+
+var scene = audioScene():
+    create audioscene and load a filelist
+
+public function setInitialReverb(n):
+    set initial reverb
+
+public function addFile:
+    add file to file list
+    
+public function setReverbImpulseResponse(url)
+    load IR image for reverb
+
+
+
+
+private function setReverbImpulseResponse(url):
+    load an IR profile
+private function setAudioSource(i):
+    play file from file list at position i
+    

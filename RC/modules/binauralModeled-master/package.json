@@ -1,0 +1,27 @@
+{
+  "name": "binauralmodeled",
+  "exports": "BinauralModeled",
+  "version": "0.1.0",
+  "description": "Processing node which spatializes an incoming audio stream in three-dimensional space for binaural audio.",
+  "main": "binaural-modeled.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arnau Julià <arnau.julia@gmail.com>",
+  "license": "BSD-3",
+  "browserify": {
+    "transforms": ["es6ify"]
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "kdt": "^0.1.0",
+    "biquad-filter": "git+https://github.com/Ircam-RnD/biquad-filter.git#master",
+    "fractional-delay": "git+https://github.com/Ircam-RnD/fractional-delay.git#master",
+    "audio-context": "git://github.com/ircam-rnd/audio-context.git#master"
+  },
+  "scripts": {
+    "bundle": "browserify binaural-modeled.es6.js > binaural-modeled.js -s 'BinauralFIR' -d -t es6ify",
+    "watch": "nodemon -w binaural-modeled.es6.js -x npm run bundle"
+  }
+}
