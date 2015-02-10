@@ -10,13 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
-    @IBOutlet weak var App_Name: UILabel!
     @IBOutlet weak var First_Image: UIImageView!
     @IBOutlet weak var Second_Image: UIImageView!
     @IBOutlet weak var Third_Image: UIImageView!
     @IBOutlet weak var Fourth_Image: UIImageView!
-    @IBOutlet weak var Discover_Button: UIButton!
+    @IBOutlet weak var Trial_Button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +29,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-//
-//    @IBAction func Discover_ButtonTapped(sender: AnyObject) {
-    
-//        self.First_Image.image = UIImage.init(named: "city")
-//        self.Second_Image.image = UIImage.init(named: "nature")
-//        self.Third_Image.image = UIImage.init(named: "safari")
-//        self.Fourth_Image.image = UIImage.init(named: "kitchen")
-//    }
-    
     
 }
 
