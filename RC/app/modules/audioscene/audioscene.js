@@ -32,17 +32,17 @@ This code has been adapted from the Chromium demo seen here:
     http://chromium.googlecode.com/svn/trunk/samples/audio/simple.html
 */
 
-var audioScene = (function () {
+define(function () {
     var context, buffer, convolver, panner, source, dryGainNode, wetGainNode, lowFilter, bufferList;
 
     var gTopProjection      = 0,
         gFrontProjection    = 0;
 
-    var x = 0,
-        y = 0,
+    var x = 1,
+        y = 1,
         z = 0;
     
-    var kInitialReverbLevel = 0.0;
+    var kInitialReverbLevel = 0.6;
     var fileList            = [],
         fileCount           = 0;
     
@@ -210,60 +210,53 @@ var audioScene = (function () {
         }
     }   
     
-    function init() {
-         // Initialize audio
-         context = new webkitAudioContext();
 
-         source = context.createBufferSource();
-         dryGainNode = context.createGain();
-         wetGainNode = context.createGain();
-         panner = context.createPanner();
-
-         lowFilter = context.createBiquadFilter();
-         lowFilter.frequency.value = 22050.0;
-         lowFilter.Q.value = 5.0;
-
-         convolver = context.createConvolver();
-
-         // Connect audio processing graph
-         source.connect(lowFilter);
-         lowFilter.connect(panner);
-
-         // Connect dry mix
-         panner.connect(dryGainNode);
-         dryGainNode.connect(context.destination);
-
-         // Connect wet mix
-         panner.connect(convolver);
-         convolver.connect(wetGainNode);
-         wetGainNode.connect(context.destination);
-         wetGainNode.gain.value = kInitialReverbLevel;
-
-         bufferList = new Array(fileCount);
-         for (var i = 0; i < fileCount; ++i) {
-             bufferList[i] = 0;
-         }
-
-         setReverbImpulseResponse('impulse-responses/spatialized3.wav');
-
-         source.playbackRate.value = 1.0;
-
-         panner.setPosition(0, 0, -4.0);
-         source.loop = true;
-
-         // Load up initial sound
-         setAudioSource(0);
-
-         var cn = {x: 0.0, y: -0.5};
-         gTopProjection.drawDotNormalized(cn);
-
-         cn.y = 0.0;
-         gFrontProjection.drawDotNormalized(cn);
-
-         var currentTime = context.currentTime;
-         source.start(currentTime + 0.020);
-    }
     return {
+        init: function() {
+             // Initialize audio
+             context = new webkitAudioContext();
+
+             source = context.createBufferSource();
+             dryGainNode = context.createGain();
+             wetGainNode = context.createGain();
+             panner = context.createPanner();
+
+             lowFilter = context.createBiquadFilter();
+             lowFilter.frequency.value = 22050.0;
+             lowFilter.Q.value = 5.0;
+
+             convolver = context.createConvolver();
+
+             // Connect audio processing graph
+             source.connect(lowFilter);
+             lowFilter.connect(panner);
+
+             // Connect dry mix
+             panner.connect(dryGainNode);
+             dryGainNode.connect(context.destination);
+
+             // Connect wet mix
+             panner.connect(convolver);
+             convolver.connect(wetGainNode);
+             wetGainNode.connect(context.destination);
+             wetGainNode.gain.value = kInitialReverbLevel;
+
+             bufferList = new Array(fileCount);
+             for (var i = 0; i < fileCount; ++i) {
+                 bufferList[i] = 0;
+             }
+
+             source.playbackRate.value = 1.0;
+
+             panner.setPosition(0, 0, -4.0);
+             source.loop = true;
+
+             // Load up initial sound
+             setAudioSource(0);
+
+             var currentTime = context.currentTime;
+             source.start(currentTime + 0.020);
+        },
         setInitialReverb:   
             function(n) {
                 kInitialReverbLevel = n;
@@ -280,7 +273,7 @@ var audioScene = (function () {
             function() {
                 return fileList;
         },
-        getImpuseResponses: 
+        getImpulseResponses: 
             function(){
                 return impulseResponses;
             },
@@ -353,6 +346,4 @@ var audioScene = (function () {
             source.buffer = buffer;
         },
   };
-})();
-
-module.exports = audioScene;
+});

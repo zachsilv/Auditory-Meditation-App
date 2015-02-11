@@ -264,57 +264,7 @@ function setSourceBuffer(buffer) {
      canvas2.addEventListener("mousemove", handleElevationMouseMove, true);
      canvas2.addEventListener("mouseup", handleMouseUp, true);
 
-     // Initialize audio
-     context = new webkitAudioContext();
-
-     source = context.createBufferSource();
-     dryGainNode = context.createGain();
-     wetGainNode = context.createGain();
-     panner = context.createPanner();
-
-     lowFilter = context.createBiquadFilter();
-     lowFilter.frequency.value = 22050.0;
-     lowFilter.Q.value = 5.0;
-
-     convolver = context.createConvolver();
-
-     // Connect audio processing graph
-     source.connect(lowFilter);
-     lowFilter.connect(panner);
-
-     // Connect dry mix
-     panner.connect(dryGainNode);
-     dryGainNode.connect(context.destination);
      
-     // Connect wet mix
-     panner.connect(convolver);
-     convolver.connect(wetGainNode);
-     wetGainNode.connect(context.destination);
-     wetGainNode.gain.value = kInitialReverbLevel;
-     
-     bufferList = new Array(fileCount);
-     for (var i = 0; i < fileCount; ++i) {
-         bufferList[i] = 0;
-     }
-
-     setReverbImpulseResponse('impulse-responses/spatialized3.wav');
-
-     source.playbackRate.value = 1.0;
-
-     panner.setPosition(0, 0, -4.0);
-     source.loop = true;
-
-     // Load up initial sound
-     setAudioSource(0);
-
-     var cn = {x: 0.0, y: -0.5};
-     gTopProjection.drawDotNormalized(cn);
-     
-     cn.y = 0.0;
-     gFrontProjection.drawDotNormalized(cn);
-
-     var currentTime = context.currentTime;
-     source.start(currentTime + 0.020);
  }
 
 var gIsMouseDown = false;
@@ -484,76 +434,6 @@ Breakbeat</li>
 <h1>Acoustic Spaces</h1>
 
 <ul>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/bin_dfeq/s3_r4_bd.wav');">
-  Binaural</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/cardiod-35-10/cardiod-35-10-spread.wav');">
-Warehouse Cardiod-35-10-spread</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/cardiod-rear-35-10/cardiod-rear-35-10.wav');">
-Warehouse Cardiod-rear-35-10</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/super-ceiling-35-10/super-ceiling-35-10.wav');">
-Warehouse Super-ceiling-35-10</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/omni-35-10/omni-35-10.wav');">
-Warehouse Omni-35-10</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/cardiod-true-stereo-15-8/cardiod-true-stereo-15-8.wav');">
-Warehouse True-Stereo-15-8</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized1.wav');">
-spatialized 1 (huge spacious)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized2.wav');">
-spatialized 2 (outside)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized3.wav');">
-spatialized 3 (outside)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized4.wav');">
-spatialized 4 (huge spacious)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized5.wav');">
-spatialized 5 (backwards)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized6.wav');">
-spatialized 6 (cosmic)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized7.wav');">
-spatialized 7 (dark cathedral)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized8.wav');">
-spatialized 8 (medium open)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/spatialized9.wav');">
-spatialized 9 (medium open)</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/echo-chamber.wav');">
-Echo Chamber</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/noise-spreader1.wav');">
-Noise Spreader</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/peculiar-backwards.wav');">
-Fluttery</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/sifter.wav');">
-Sifter</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/wildecho.wav');">
-Wild Echo</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/backslap1.wav');">
-backslap</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/tim-stretch2.wav');">
-tim-stretch2</li>
-
-<li onmousedown="setReverbImpulseResponse('impulse-responses/tim-warehouse/tim-warehouse-stretch1.wav');">
-tim-warehouse-stretch1.wav</li>
-
 
 
 
