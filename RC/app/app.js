@@ -21,7 +21,7 @@ requirejs(['audioscene/audioscene'],
             setTimeout(function() {
                 scene.setReverbImpulseResponse('modules/audioscene/'+ir.file)
                 console.log(ir);
-            }, 6000*i);   
+            }, 5000*i);   
             i++;
         });
         
