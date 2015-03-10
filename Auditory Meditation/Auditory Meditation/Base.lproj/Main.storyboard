@@ -28,6 +28,15 @@
                                             <segue destination="I5V-fJ-1UN" kind="push" id="kKR-QI-9QE"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2q-94-XIB" userLabel="2ndButton">
+                                        <rect key="frame" x="155" y="8" width="139" height="137"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="T1B-of-ZwM" kind="push" id="idl-3c-LhW"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RF-u7-Y8k" userLabel="3rdButton">
                                         <rect key="frame" x="10" y="155" width="139" height="137"/>
                                         <state key="normal">
@@ -74,15 +83,6 @@
                                             <constraint firstAttribute="width" constant="135" id="kfT-MH-dK9"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2q-94-XIB" userLabel="2ndButton">
-                                        <rect key="frame" x="155" y="8" width="139" height="137"/>
-                                        <state key="normal">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="T1B-of-ZwM" kind="push" id="idl-3c-LhW"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.88437485674324745" blue="0.67266659530824047" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -127,7 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ao-Nb-Fgx">
-                                <rect key="frame" x="271" y="289" width="59" height="21"/>
+                                <rect key="frame" x="275" y="289" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -354,17 +354,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slI-va-hAc">
-                                <rect key="frame" x="274" y="290" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ul7-6p-yYp">
+                                <rect key="frame" x="279" y="419" width="43" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPX-WU-fUz">
+                                <rect key="frame" x="285" y="363" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fqA-Py-9Y6">
+                                <rect key="frame" x="150" y="487" width="300" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="slI-va-hAc" secondAttribute="centerX" id="7fe-GV-Pf2"/>
-                            <constraint firstAttribute="centerY" secondItem="slI-va-hAc" secondAttribute="centerY" id="rhy-cf-RkP"/>
+                            <constraint firstAttribute="centerX" secondItem="ul7-6p-yYp" secondAttribute="centerX" id="M3a-O4-HIi"/>
+                            <constraint firstAttribute="centerX" secondItem="RPX-WU-fUz" secondAttribute="centerX" id="hKp-0T-y4u"/>
+                            <constraint firstAttribute="centerX" secondItem="fqA-Py-9Y6" secondAttribute="centerX" id="lMD-wq-acC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Cr2-Nb-Wfc"/>

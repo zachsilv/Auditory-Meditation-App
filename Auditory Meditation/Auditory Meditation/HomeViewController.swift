@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blackColor()
+//        self.view.backgroundColor = UIColor.blackColor()
+
         self.First_Image.image = UIImage.init(named: "city")
         self.Second_Image.image = UIImage.init(named: "nature")
         self.Third_Image.image = UIImage.init(named: "safari")

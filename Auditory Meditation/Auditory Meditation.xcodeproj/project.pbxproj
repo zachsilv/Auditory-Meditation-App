@@ -13,6 +13,8 @@
 		0FC355CE1A86651500A67A43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC355CD1A86651500A67A43 /* Images.xcassets */; };
 		0FC355D11A86651500A67A43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC355CF1A86651500A67A43 /* LaunchScreen.xib */; };
 		0FC355DD1A86651500A67A43 /* Auditory_MeditationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC355DC1A86651500A67A43 /* Auditory_MeditationTests.swift */; };
+		0FC7A5031AACAF1200A33BAA /* FirstImageAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC7A5021AACAF1200A33BAA /* FirstImageAudioPlayer.swift */; };
+		0FC7A5051AACB0A900A33BAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC7A5041AACB0A900A33BAA /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		0FC355D61A86651500A67A43 /* Auditory MeditationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Auditory MeditationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC355DB1A86651500A67A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC355DC1A86651500A67A43 /* Auditory_MeditationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auditory_MeditationTests.swift; sourceTree = "<group>"; };
+		0FC7A5021AACAF1200A33BAA /* FirstImageAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstImageAudioPlayer.swift; sourceTree = "<group>"; };
+		0FC7A5041AACB0A900A33BAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC7A5051AACB0A900A33BAA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +64,7 @@
 		0FC355B81A86651500A67A43 = {
 			isa = PBXGroup;
 			children = (
+				0FC7A5041AACB0A900A33BAA /* AVFoundation.framework */,
 				0FC355C31A86651500A67A43 /* Auditory Meditation */,
 				0FC355D91A86651500A67A43 /* Auditory MeditationTests */,
 				0FC355C21A86651500A67A43 /* Products */,
@@ -79,6 +85,7 @@
 			children = (
 				0FC355C61A86651500A67A43 /* AppDelegate.swift */,
 				0FC355C81A86651500A67A43 /* HomeViewController.swift */,
+				0FC7A5021AACAF1200A33BAA /* FirstImageAudioPlayer.swift */,
 				0FC355CA1A86651500A67A43 /* Main.storyboard */,
 				0FC355CD1A86651500A67A43 /* Images.xcassets */,
 				0FC355CF1A86651500A67A43 /* LaunchScreen.xib */,
@@ -214,6 +221,7 @@
 			files = (
 				0FC355C91A86651500A67A43 /* HomeViewController.swift in Sources */,
 				0FC355C71A86651500A67A43 /* AppDelegate.swift in Sources */,
+				0FC7A5031AACAF1200A33BAA /* FirstImageAudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
